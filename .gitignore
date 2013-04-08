@@ -1,5 +1,6 @@
 conf.py
 
+.*.swp
 *.py[cod]
 
 # C extensions
