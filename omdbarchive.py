@@ -58,6 +58,8 @@ class CI():
 	def toHTML(s):
 		# builds html from define strings
 		return d.ITEM % (s.imdburl,s.imdbQuery["Poster"],s.imdburl,s.imdburl,s.imdbQuery["Title"],s.imdbQuery["Released"],s.imdbQuery["Genre"],s.imdbQuery["Runtime"],s.imdbQuery["imdbRating"],s.imdbQuery["Plot"])
+	def toDict(s):
+		return {"imdburl":s.imdburl,"poster":s.imdbQuery["Poster"],"title":s.imdbQuery["Title"],"released":s.imdbQuery["Released"],"genre":s.imdbQuery["Genre"],"runtime":s.imdbQuery["Runtime"],"rating":s.imdbQuery["imdbRating"],"plot":s.imdbQuery["Plot"]}
 
 class Folder():
 	def __init__(s,path,name,**kwargs):
@@ -93,3 +95,5 @@ class Folder():
 		return "%.2f" % (total_size/1024**3)
 	def toHTML(s):
 		return d.HEAD % (c.stylesheet,c.title,"%s") + d.NEWLINE.join([ci.toHTML() for ci in s.flist]) + d.TAIL % (s.getSize(),len(s.flist))
+	def toDict(s):
+		return {"path":s.path,"name":s.name,"cis":[ci.toDict() for ci in s.flist], "size":s.getSize(), "count":len(s.flist)}
