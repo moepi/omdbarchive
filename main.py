@@ -5,6 +5,7 @@ import omdbarchive as o
 import logging, sys, os
 import urllib2
 import jinja2
+import datetime
 log=logging.getLogger()
 
 folders=[]
@@ -50,7 +51,7 @@ except IOError, e:
 
 # create per folder html files
 for folder in folders:
-	s=template_folder.render(doc=doc, navitems=index, releases=folder["cis"], folder={"size":folder["size"],"count":folder["count"]})
+	s=template_folder.render(doc=doc, navitems=index, releases=folder["cis"], folder={"size":folder["size"],"count":folder["count"],"gendate":str(datetime.datetime.today())})
 	#s= folder.toHTML() % (u" - ".join(index))
 	try:
 		f = open(os.path.join(c.outputdir,folder["name"])+".html",'w')
