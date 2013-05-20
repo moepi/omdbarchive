@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ doc.stylesheet }}">
+<meta charset='utf-8'> 
+<title>{{ doc.title }}</title>
+</head>
+<body>
+<div id="container">
+<div class="header">
+<h1>{% for item in navitems %}<a href="{{ item.link }}">{{ item.title }}</a> {% endfor %}</h1>
+</div>
+</div>
+</body>
+</html>
+
