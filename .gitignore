@@ -1,4 +1,5 @@
 conf.py
+output/
 
 .*.swp
 *.py[cod]
