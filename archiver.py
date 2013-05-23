@@ -8,10 +8,6 @@ import itertools
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 log=logging.getLogger()
 
-#TEMPLATEDIR="/path/to/jinja2-templates"
-#SEARCHFOLDERS=["/path/to/movies/","/path/to/series"]
-#OUTPUTDIR="/path/to/output"
-
 class Folder():
         def __init__(s,path,name,**kwargs):
                 s.name=name
@@ -101,7 +97,7 @@ def build_html(folders,index,templatepath,outputdir):
 
 if __name__=="__main__":
 	if len(sys.argv)<4:
-		print "screw you!"
+		print "Usage:\n python %s templates output /path/to/movies/ [/path/to/whatever]*" % sys.argv[0]
 		sys.exit()
 	templatedir = sys.argv[1]
 	outputdir = sys.argv[2]
