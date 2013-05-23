@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <head>
 <meta charset='utf-8'> 
-{% if doc.stylesheet %}<link rel="stylesheet" type="text/css" href="{{ doc.stylesheet }}">{% endif %}
-<title>{{ doc.title }}</title>
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 961px)" href="desktop.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 960px)" href="mobile.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" href="mobile.css" />
+<title>A List of cool Video Material</title>
 </head>
 <body>
 <div id="container">
@@ -12,13 +16,13 @@
 </div>
 {% for item in releases %}
 <div class=release>
-<a href="{{item.imdburl}}"><img class=cover src="{{item.poster}}" alt="{{item.imdburl}}" /></a>
-<h2><a href="{{item.imdburl}}">{{item.title}}</a></h2><br />
-Released: {{item.released}}<br />
-Genre: {{item.genre}}<br />
-Runtime: {{item.runtime}}<br />
-Rating: {{item.rating}}<br />
-<p class=plot>Plot:<br />{{item.plot}}</p>
+<a href="{{item.imdbURL}}"><img class=cover src="{{item.Poster}}" alt="{{item.imdburl}}" /></a>
+<h2><a href="{{item.imdbURL}}">{{item.Title}}</a></h2><br />
+Released: {{item.Released}}<br />
+Genre: {{item.Genre}}<br />
+Runtime: {{item.Runtime}}<br />
+Rating: {{item.imdbRating}} ({{item.imdbVotes}} Votes)<br />
+<p class=plot>Plot:<br />{{item.Plot}}</p>
 </div>
 {% endfor %}
 <div style="margin-top:20px; margin-bottom:20px; text-align: center; font-size:small;">
