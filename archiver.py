@@ -5,6 +5,7 @@ import urllib2
 import jinja2
 import datetime
 import itertools
+import re
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 log=logging.getLogger()
 
@@ -42,15 +43,13 @@ class Folder():
         def toDict(s):
                 return {"path":s.path,"name":s.name,"cis":[ci.toDict() for ci in s.flist], "size":s.getSize(), "count":len(s.flist)}
 
-def ignore_article(string):
-	retStr=string.lower().lstrip('a the a the')
-	print "aus",string.lower(),"wird",retStr
+def ignore_articles(string):
+	retStr=re.sub(r'(the |a )*','',string.lower())
 	return retStr
 
 def sort_by_name(folders):
 	for folder in folders:
-		folder["cis"] = sorted(folder["cis"], key=lambda k: ignore_article(k['Title']))
-		print folder
+		folder["cis"] = sorted(folder["cis"], key=lambda k: ignore_articles(k['Title']))
 	return folders
 
 def walk_dirs(dirlist):
