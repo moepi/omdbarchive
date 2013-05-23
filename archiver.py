@@ -42,6 +42,17 @@ class Folder():
         def toDict(s):
                 return {"path":s.path,"name":s.name,"cis":[ci.toDict() for ci in s.flist], "size":s.getSize(), "count":len(s.flist)}
 
+def ignore_article(string):
+	retStr=string.lower().lstrip('a the a the')
+	print "aus",string.lower(),"wird",retStr
+	return retStr
+
+def sort_by_name(folders):
+	for folder in folders:
+		folder["cis"] = sorted(folder["cis"], key=lambda k: ignore_article(k['Title']))
+		print folder
+	return folders
+
 def walk_dirs(dirlist):
 	folders=[]
 	index=[]
@@ -103,5 +114,6 @@ if __name__=="__main__":
 	outputdir = sys.argv[2]
 	searchfolders = sys.argv[3:]
 	folders,index = walk_dirs(searchfolders)
+	folders=sort_by_name(folders)
 	download_poster([cis for cis in folders],outputdir)
 	build_html(folders,index,templatedir,outputdir)
