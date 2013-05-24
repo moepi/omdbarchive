@@ -1,12 +1,3 @@
-body, html { margin:0; padding:0; height:100%; }
-body { background:#333; }
-div#container { margin:0 auto 0 auto; height:auto; border-left:2px solid; border-right:2px solid; font-family:verdana, arial, helvetica; font-size:14px; background:#fff; }
-div.header { padding:10px; font-size:16px; }
-div.footer { border-top:1px solid #000; padding:10px; text-align:center; }
-div.release { border-top:1px solid #000; min-height:210px; padding:10px; }
-p.plot { text-align: justify; font-style:italic; }
-img.cover { padding-right:10px; padding-bottom:10px; width:150px; height:210px; float:left; }
-h1 { font-size: 150% ; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; }
-h2 { font-size: 120% ; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; }
-a, a:link, a:visited, a:active { color:#000; text-decoration:underline; }
-a:hover { color:#000; text-decoration:none; }
+div#container { font-size:14px; background:#888; }
+div.header { font-size:16px; }
+img.cover { width:150px; height:210px; }

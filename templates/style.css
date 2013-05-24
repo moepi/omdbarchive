@@ -1,0 +1,15 @@
+body, html { margin:0; padding:0; height:100%; }
+body { background:#333; }
+div#container { margin:0 auto 0 auto; height:auto; border-left:2px solid; border-right:2px solid; font-family:verdana, arial, helvetica; background:#fff; }
+div.header { padding:10px; font-size:16px; text-align:center; }
+div.footer { border-top:1px solid #000; padding:10px; clear: both; text-align:center; }
+div.release { border-top:1px solid #000; min-height:210px; padding:10px; }
+div.even { float: left; }
+div.odd { float: left; }
+p.plot { text-align: justify; font-style:italic; }
+img.cover { padding-right:10px; padding-bottom:10px; width:150px; height:210px; float:left; }
+h1 { font-size: 150% ; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; }
+h2 { font-size: 120% ; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; }
+a, a:link, a:visited, a:active { color:#000; text-decoration:underline; }
+a.anchor { color:#888; text-decoration:none; }
+a:hover { color:#000; text-decoration:none; }
