@@ -1,3 +1,4 @@
-div#container { font-size:14px; background:#888; }
-div.header { font-size:16px; }
-img.cover { width:150px; height:210px; }
+div#container { font-size:12px; margin:0 auto 0 auto; height:auto; width: auto; border-left:2px solid; border-right:2px solid; font-family:verdana, arial, helvetica; }
+div.footer { padding:1px; }
+div.header { padding:1px; font-size:16px; }
+img.cover { padding-right:1px; padding-bottom:1px; width:150px; height:210px; }

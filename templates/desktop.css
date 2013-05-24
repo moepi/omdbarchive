@@ -1,4 +1,6 @@
-div#container { min-width: 1300px; width:1300px; font-size:14px; background:#fff; }
+div#container { min-width: 1300px; width:1200px; font-size:14px; }
 div.header { font-size:16px; }
-div.release { width: 600px; }
+div.release { width: 48%; }
+div.even { float: left; }
+div.odd { float: right; }
 img.cover { width:150px; height:210px; }
