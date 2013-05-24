@@ -14,8 +14,8 @@
 <div class="header">
 <h1>{% for navitem in navitems %}<a href="{{navitem.link}}">{{navitem.title}}</a> {% endfor %}</h1>
 </div>
-{% for item in releases %}
-<div class=release>
+{% for i,item in enumerate(releases) %}
+{% if i is odd %}<div class="release odd">{% else %}<div class="release even">{% endif %}
 <a href="{{item.imdbURL}}"><img class=cover src="{{item.Poster}}" alt="{{item.imdburl}}" /></a>
 <h2><a href="{{item.imdbURL}}">{{item.Title}}</a></h2><br />
 Released: {{item.Released}}<br />
@@ -24,8 +24,10 @@ Runtime: {{item.Runtime}}<br />
 Rating: {{item.imdbRating}} ({{item.imdbVotes}} Votes)<br />
 <p class=plot>Plot:<br />{{item.Plot}}</p>
 </div>
+{% if i is odd %}<div style="float: clear;"></div>{% endif %}
 {% endfor %}
-<div style="margin-top:20px; margin-bottom:20px; text-align: center; font-size:small;">
+<div style="float: clear;"></div>
+<div class="footer">
 Space used by this folder: {{folder.size}}<br />
 Total entries in this Folder: {{folder.count}}<br />
 Generated: {{folder.gendate}}<br /><br />
