@@ -96,7 +96,8 @@ def build_html(folders,index,templatepath,outputdir):
 	
 	# create per folder html files
 	for folder in folders:
-		s=template_folder.render(navitems=index, releases=folder["cis"], folder={"size":folder["size"],"count":folder["count"],"gendate":str(datetime.datetime.today())})
+		# passing enumerate to use it in template
+		s=template_folder.render(navitems=index, releases=folder["cis"], folder={"size":folder["size"],"count":folder["count"],"gendate":str(datetime.datetime.today())},enumerate=enumerate)
 		try:
 			f = open(os.path.join(outputdir,folder["name"])+".html",'w')
 			f.write(s.encode("UTF-8"))
